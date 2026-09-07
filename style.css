@@ -1,0 +1,540 @@
+/* =========================================================
+   ALANA ANTÓN — GAMEPLAY EXPERIENCE QA PORTFOLIO
+   ========================================================= */
+
+:root {
+    --bg: #0b0e14;
+    --bg-secondary: #111827;
+    --panel: #1f293d;
+
+    --cyan: #00e5ff;
+    --purple: #c084fc;
+    --purple-dark: #8a2be2;
+    --orange: #ff7a00;
+
+    --white: #ffffff;
+    --text: #c5cdd9;
+    --muted: #94a3b8;
+
+    --border: rgba(0, 229, 255, 0.25);
+    --glow-cyan: rgba(0, 229, 255, 0.18);
+    --glow-purple: rgba(192, 132, 252, 0.12);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            var(--glow-purple),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            var(--glow-cyan),
+            transparent 25%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SUBTLE TECH GRID
+   ========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 229, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   HEADER / HERO
+   ========================================================= */
+
+header {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+}
+
+
+/* Small technical label */
+
+header::before {
+    content: "GAME QA // PLAYER EXPERIENCE // LQA";
+
+    color: var(--orange);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main name */
+
+header h1 {
+    color: var(--white);
+
+    font-size: clamp(3rem, 9vw, 7rem);
+
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    text-shadow:
+        0 0 12px rgba(0, 229, 255, 0.35),
+        0 0 35px rgba(192, 132, 252, 0.15);
+
+    margin-bottom: 15px;
+}
+
+
+/* Professional title */
+
+header p {
+    color: var(--cyan);
+
+    font-size: clamp(1rem, 2vw, 1.4rem);
+
+    letter-spacing: 0.12em;
+
+    max-width: 900px;
+}
+
+
+/* Decorative line */
+
+header::after {
+    content: "";
+
+    width: 120px;
+    height: 3px;
+
+    margin-top: 35px;
+
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--purple),
+        var(--orange)
+    );
+
+    box-shadow:
+        0 0 12px rgba(0, 229, 255, 0.5);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+    padding: 100px 0;
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+    position: relative;
+}
+
+
+/* Section number / decoration */
+
+section::before {
+    content: "//";
+
+    position: absolute;
+    left: -35px;
+    top: 105px;
+
+    color: var(--purple);
+
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+/* Section titles */
+
+h2 {
+    color: var(--cyan);
+
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+
+    letter-spacing: 0.08em;
+
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+p {
+    max-width: 850px;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+}
+
+p + p {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px 35px;
+
+    margin-top: 25px;
+}
+
+li {
+    color: var(--text);
+
+    background: rgba(17, 24, 39, 0.65);
+
+    border-left: 2px solid var(--purple);
+
+    padding: 12px 16px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+li::before {
+    content: "▸";
+
+    color: var(--cyan);
+
+    margin-right: 10px;
+}
+
+li:hover {
+    transform: translateX(5px);
+
+    border-left-color: var(--orange);
+
+    background: rgba(31, 41, 61, 0.85);
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+article {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.95),
+            rgba(31, 41, 61, 0.65)
+        );
+
+    border: 1px solid var(--border);
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Tech corner */
+
+article::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 40px;
+    height: 3px;
+
+    background: var(--cyan);
+
+    transition: width 0.3s ease;
+}
+
+
+/* Orange detail */
+
+article::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 45px;
+    height: 3px;
+
+    background: var(--orange);
+}
+
+
+/* Project hover */
+
+article:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.12),
+        0 0 50px rgba(192, 132, 252, 0.05);
+}
+
+article:hover::before {
+    width: 100%;
+}
+
+
+/* Project title */
+
+article h3 {
+    color: var(--white);
+
+    font-size: 1.5rem;
+
+    letter-spacing: 0.05em;
+
+    margin-bottom: 8px;
+}
+
+
+/* Project genre */
+
+article p:first-of-type {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* Project role */
+
+article p:last-of-type {
+    color: var(--purple);
+
+    font-size: 0.9rem;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   HOW I WORK
+   ========================================================= */
+
+section:nth-of-type(7) p:first-of-type {
+    color: var(--orange);
+
+    font-size: clamp(1.3rem, 3vw, 2rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+section:last-child {
+    text-align: center;
+
+    border-bottom: none;
+
+    padding-bottom: 120px;
+}
+
+section:last-child p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--cyan);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+a:hover {
+    color: var(--orange);
+
+    text-shadow:
+        0 0 10px rgba(255, 122, 0, 0.4);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-dark);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cyan);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        min-height: 65vh;
+
+        padding: 60px 20px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+
+        letter-spacing: 0.04em;
+    }
+
+    header p {
+        font-size: 0.9rem;
+
+        line-height: 1.6;
+    }
+
+    main {
+        width: 88%;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    section::before {
+        display: none;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        padding: 22px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
